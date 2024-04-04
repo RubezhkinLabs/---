@@ -5,11 +5,22 @@ public class Cryptographer{
 		this.crypto = crypto;
 	}
 
-	public String Encrypt(String inpString){
-		return crypto.Encrypt(inpString);
+	public String encrypt(String inpString){
+		return crypto.encrypt(inpString);
 	}
 
-	public String DeEncrypt(String inpString){
-		return crypto.DeEncrypt(inpString);
+	public String deEncrypt(String inpString){
+		return crypto.deEncrypt(inpString);
 	}
+
+	public void execute(String inpString){
+		String res;
+		long startTime = System.currentTimeMillis();
+		res = encrypt(inpString);
+		long endTime = System.currentTimeMillis();
+		crypto.printAlgorithmName();
+		crypto.printDescription();
+		System.out.println("Время выполнения " + (endTime-startTime));
+		System.out.println(res);
+	}	
 }

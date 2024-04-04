@@ -1,7 +1,7 @@
 package com.example;
 
 public class Cessar3 implements Cryptable{
-	public String Encrypt(String inpText){
+	public String encrypt(String inpText){
 		StringBuilder outText = new StringBuilder();
 		char ch;
 		for(int i = 0; i < inpText.length(); i++){
@@ -15,7 +15,7 @@ public class Cessar3 implements Cryptable{
 		return outText.toString();
 	}
 
-	public String DeEncrypt(String inpText) {
+	public String deEncrypt(String inpText) {
 		StringBuilder outText = new StringBuilder();
 		char ch;
 		for(int i = 0; i < inpText.length(); i++){
@@ -27,6 +27,15 @@ public class Cessar3 implements Cryptable{
 			outText.append(ch);
 		}
 		return outText.toString();
+	}
+
+	public void printAlgorithmName() {
+		System.out.println("Цезарь 3");
+	}
+
+	@Override
+	public void printDescription() {
+		System.out.println("Смещает буквы на 3 позиции");	
 	}
 }
 
